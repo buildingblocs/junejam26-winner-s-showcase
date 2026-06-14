@@ -7,6 +7,7 @@ export type SourcePreview = {
 export type ShowcaseAsset = {
   slidePdf?: string;
   playUrl?: string;
+  keyboardMode?: "wasd" | "full";
   sourceFiles: SourcePreview[];
 };
 
@@ -16,6 +17,7 @@ export const showcaseAssets: Record<string, ShowcaseAsset> = {
   p6: {
     slidePdf: `${w}/P6 - Pygame Winner - ALARM CLOCK Ticks Timebomb/slides/pygame second - p15 - Canva/GAME JAM BUILDINGBLOCS 2026.pdf`,
     playUrl: "/play/p6/index.html",
+    keyboardMode: "full",
     sourceFiles: [{ label: "alarm_clock.py", href: `${w}/P6 - Pygame Winner - ALARM CLOCK Ticks Timebomb/src/pygame second - p15 - GitHub/Pygame_P6-main/alarm_clock.py`, language: "python" }],
   },
   p15: {

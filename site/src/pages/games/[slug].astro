@@ -37,6 +37,29 @@ const sourcePreviews = asset.sourceFiles.map((file) => ({
   ...file,
   code: readPublicFile(file.href),
 }));
+
+const keyboardRows = asset.keyboardMode === "full"
+  ? [
+      ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+      ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+      ["A", "S", "D", "F", "G", "H", "J", "K", "L"],
+      ["Z", "X", "C", "V", "B", "N", "M"],
+      ["ArrowLeft", "ArrowDown", "ArrowUp", "ArrowRight"],
+      ["Backspace", "Space", "Enter"],
+    ]
+  : asset.keyboardMode === "wasd"
+    ? [["W"], ["A", "S", "D"], ["Space", "Enter"]]
+    : [];
+
+const keyLabel = (key: string) => ({
+  ArrowLeft: "Left",
+  ArrowDown: "Down",
+  ArrowUp: "Up",
+  ArrowRight: "Right",
+  Backspace: "Bksp",
+  Space: "Space",
+  Enter: "Enter",
+}[key] ?? key);
 ---
 
 <Layout title={game.title} description={game.summary}>
@@ -60,7 +83,7 @@ const sourcePreviews = asset.sourceFiles.map((file) => ({
       </div>
     </section>
 
-    <section class="detail-body">
+    <section class:list={["detail-body", asset.playUrl && "detail-body-playable"]}>
       <article class="writeup">
         {game.writeup.split(/\n\s*\n/).map((paragraph) => <p>{paragraph}</p>)}
       </article>
@@ -71,14 +94,33 @@ const sourcePreviews = asset.sourceFiles.map((file) => ({
           <h3>Exact browser build</h3>
           {
             asset.playUrl ? (
-              <iframe
-                class="play-embed"
-                src={withBase(asset.playUrl)}
-                title={`${game.title} playable build`}
-                loading="lazy"
-                allow="autoplay; fullscreen; gamepad"
-                sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"
-              />
+              <>
+                <iframe
+                  class="play-embed"
+                  data-play-embed
+                  src={withBase(asset.playUrl)}
+                  title={`${game.title} playable build`}
+                  loading="lazy"
+                  allow="autoplay; fullscreen; gamepad"
+                  sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"
+                />
+                {keyboardRows.length > 0 && (
+                  <div class={`game-keyboard ${asset.keyboardMode === "full" ? "full-keyboard" : "wasd-keyboard"}`} data-game-keyboard>
+                    <button class="focus-game" type="button" data-focus-game>Focus game</button>
+                    <div class="key-row-stack">
+                      {keyboardRows.map((row) => (
+                        <div class="key-row">
+                          {row.map((key) => (
+                            <button class={`key-button key-${key.toLowerCase()}`} type="button" data-key={key}>
+                              {keyLabel(key)}
+                            </button>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
             ) : (
               <div class="play-frame">
                 <div>
@@ -153,3 +195,75 @@ const sourcePreviews = asset.sourceFiles.map((file) => ({
     </section>
   </main>
 </Layout>
+
+<script>
+  // @ts-nocheck
+  const keyMeta = {
+    ArrowLeft: { key: "ArrowLeft", code: "ArrowLeft", keyCode: 37 },
+    ArrowUp: { key: "ArrowUp", code: "ArrowUp", keyCode: 38 },
+    ArrowRight: { key: "ArrowRight", code: "ArrowRight", keyCode: 39 },
+    ArrowDown: { key: "ArrowDown", code: "ArrowDown", keyCode: 40 },
+    Backspace: { key: "Backspace", code: "Backspace", keyCode: 8 },
+    Enter: { key: "Enter", code: "Enter", keyCode: 13 },
+    Space: { key: " ", code: "Space", keyCode: 32 },
+  };
+
+  const getKeyMeta = (value) => {
+    if (keyMeta[value]) return keyMeta[value];
+    const upper = value.toUpperCase();
+    return {
+      key: value.length === 1 ? value.toLowerCase() : value,
+      code: value.length === 1 && /[A-Z]/.test(upper) ? `Key${upper}` : value,
+      keyCode: value.length === 1 ? upper.charCodeAt(0) : 0,
+    };
+  };
+
+  const fireGameKey = (iframe, value, type) => {
+    const targetWindow = iframe?.contentWindow;
+    if (!targetWindow) return;
+
+    const meta = getKeyMeta(value);
+    const eventInit = {
+      key: meta.key,
+      code: meta.code,
+      keyCode: meta.keyCode,
+      which: meta.keyCode,
+      bubbles: true,
+      cancelable: true,
+    };
+
+    targetWindow.focus();
+    targetWindow.dispatchEvent(new KeyboardEvent(type, eventInit));
+    targetWindow.document?.dispatchEvent(new KeyboardEvent(type, eventInit));
+  };
+
+  document.querySelectorAll("[data-game-keyboard]").forEach((keyboard) => {
+    const playPanel = keyboard.closest(".play-panel");
+    const iframe = playPanel?.querySelector("[data-play-embed]");
+
+    keyboard.querySelector("[data-focus-game]")?.addEventListener("click", () => {
+      iframe?.focus();
+      iframe?.contentWindow?.focus();
+    });
+
+    keyboard.querySelectorAll("[data-key]").forEach((button) => {
+      const key = button.dataset.key;
+      if (!key) return;
+
+      const press = (event) => {
+        event.preventDefault();
+        button.setPointerCapture?.(event.pointerId);
+        fireGameKey(iframe, key, "keydown");
+      };
+      const release = (event) => {
+        event.preventDefault();
+        fireGameKey(iframe, key, "keyup");
+      };
+
+      button.addEventListener("pointerdown", press);
+      button.addEventListener("pointerup", release);
+      button.addEventListener("pointercancel", release);
+      button.addEventListener("pointerleave", release);
+    });
+  });
+</script>

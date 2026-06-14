@@ -324,6 +324,10 @@ h3 {
   padding: 24px 0 70px;
 }
 
+.detail-body-playable {
+  grid-template-columns: 1fr;
+}
+
 .writeup,
 .side-panel section,
 .pdf-viewer,
@@ -355,6 +359,10 @@ h3 {
   gap: 18px;
 }
 
+.detail-body-playable .side-panel {
+  order: -1;
+}
+
 .side-panel section {
   padding: 20px;
 }
@@ -372,13 +380,76 @@ h3 {
 }
 
 .play-embed {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  min-height: 320px;
+  aspect-ratio: 900 / 650;
+  min-height: min(74vh, 650px);
   margin-top: 16px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   background: #020617;
+}
+
+.detail-body-playable .play-panel {
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.detail-body-playable .play-embed {
+  min-height: min(78vh, 760px);
+}
+
+.game-keyboard {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.focus-game,
+.key-button {
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.focus-game:hover,
+.key-button:hover {
+  border-color: var(--accent);
+}
+
+.focus-game {
+  justify-self: start;
+  padding: 0 14px;
+  color: #ffd89a;
+}
+
+.key-row-stack {
+  display: grid;
+  gap: 7px;
+}
+
+.key-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+}
+
+.key-button {
+  min-width: 42px;
+  padding: 0 10px;
+}
+
+.key-space {
+  min-width: min(100%, 260px);
+}
+
+.key-enter,
+.key-backspace {
+  min-width: 86px;
 }
 
 .play-title {
