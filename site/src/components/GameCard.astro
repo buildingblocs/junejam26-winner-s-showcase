@@ -1,0 +1,25 @@
+---
+import type { GameEntry } from "../data/games";
+import { withBase } from "../utils/paths";
+
+const { game } = Astro.props as { game: GameEntry };
+
+const tagClass = (tag: string) => {
+  if (tag.includes("Winner") || tag.includes("Runner")) return "rank";
+  if (tag === "Pygame" || tag === "Unity") return "track";
+  return "special";
+};
+---
+
+<a class="game-card" href={withBase(`/games/${game.slug}/`)}>
+  <img src={withBase(game.cover)} alt="" loading="lazy" />
+  <div class="card-content">
+    <div class="tag-row">
+      <span class={`tag ${tagClass(game.track)}`}>{game.track}</span>
+      {game.awards.map((award) => <span class={`tag ${tagClass(award)}`}>{award}</span>)}
+    </div>
+    <h3>{game.title}</h3>
+    <p>{game.summary}</p>
+    <div class="meta-line">{game.teamCode} - {game.track}</div>
+  </div>
+</a>

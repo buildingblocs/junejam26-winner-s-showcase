@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GameCard from "../components/GameCard.astro";
+import { rankedGames, specialGames } from "../data/games";
+---
+
+<Layout title="June Jam Game Showcase" description="BuildingBloCS June Jam 2026 winners and special prize showcase.">
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">BuildingBloCS June Jam 2026</p>
+        <h1>Winner's Showcase</h1>
+        <div class="hero-actions">
+          <a class="button primary" href="#winners">Browse winners</a>
+          <a class="button" href="#specials">Special prizes</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="winners" class="section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Ranked Awards</p>
+        <h2>Main track winners</h2>
+      </div>
+      <div class="game-grid">
+        {rankedGames.map((game) => <GameCard game={game} />)}
+      </div>
+    </section>
+
+    <section id="specials" class="section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Special Prizes</p>
+        <h2>Special prize winners</h2>
+      </div>
+      <div class="game-grid">
+        {specialGames.map((game) => <GameCard game={game} />)}
+      </div>
+    </section>
+
+  </main>
+</Layout>

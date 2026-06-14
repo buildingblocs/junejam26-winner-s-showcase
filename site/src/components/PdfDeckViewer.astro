@@ -1,0 +1,130 @@
+---
+import { withBase } from "../utils/paths";
+
+const { src, title } = Astro.props as { src: string; title: string };
+const encodedSrc = encodeURI(withBase(src));
+---
+
+<div class="pdf-viewer" data-pdf-viewer data-pdf-src={encodedSrc}>
+  <div class="pdf-toolbar">
+    <div>
+      <p class="eyebrow">Deck viewer</p>
+      <strong>{title}</strong>
+    </div>
+    <div class="pdf-controls">
+      <button type="button" data-pdf-prev aria-label="Previous slide">Prev</button>
+      <span data-pdf-status>Loading...</span>
+      <button type="button" data-pdf-next aria-label="Next slide">Next</button>
+      <button type="button" data-pdf-zoom-out aria-label="Zoom out">-</button>
+      <button type="button" data-pdf-zoom-in aria-label="Zoom in">+</button>
+    </div>
+  </div>
+  <div class="pdf-stage">
+    <canvas data-pdf-canvas></canvas>
+  </div>
+  <div class="pdf-fallback" hidden data-pdf-fallback>
+    <p>Could not render deck in the custom viewer.</p>
+    <a href={encodedSrc}>Open PDF</a>
+  </div>
+</div>
+
+<script>
+  // @ts-nocheck
+  import * as pdfjsLib from "pdfjs-dist";
+  import workerUrl from "pdfjs-dist/build/pdf.worker.mjs?url";
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+
+  const renderViewer = async (viewer) => {
+    if (viewer.dataset.ready === "true") return;
+    viewer.dataset.ready = "true";
+
+    const canvas = viewer.querySelector("[data-pdf-canvas]");
+    const stage = viewer.querySelector(".pdf-stage");
+    const status = viewer.querySelector("[data-pdf-status]");
+    const fallback = viewer.querySelector("[data-pdf-fallback]");
+    const previous = viewer.querySelector("[data-pdf-prev]");
+    const next = viewer.querySelector("[data-pdf-next]");
+    const zoomIn = viewer.querySelector("[data-pdf-zoom-in]");
+    const zoomOut = viewer.querySelector("[data-pdf-zoom-out]");
+    const context = canvas.getContext("2d");
+
+    let pdf;
+    let pageNumber = 1;
+    let scale = 1;
+    let rendering = false;
+
+    const setStatus = () => {
+      if (!pdf) return;
+      status.textContent = `${pageNumber} / ${pdf.numPages}`;
+      previous.disabled = pageNumber <= 1;
+      next.disabled = pageNumber >= pdf.numPages;
+    };
+
+    const renderPage = async () => {
+      if (!pdf || rendering) return;
+      rendering = true;
+
+      const page = await pdf.getPage(pageNumber);
+      const baseViewport = page.getViewport({ scale: 1 });
+      const availableWidth = Math.max(stage.clientWidth - 32, 320);
+      const fitScale = Math.min(availableWidth / baseViewport.width, 1.8);
+      const viewport = page.getViewport({ scale: fitScale * scale });
+      const ratio = window.devicePixelRatio || 1;
+
+      canvas.width = Math.floor(viewport.width * ratio);
+      canvas.height = Math.floor(viewport.height * ratio);
+      canvas.style.width = `${Math.floor(viewport.width)}px`;
+      canvas.style.height = `${Math.floor(viewport.height)}px`;
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      context.clearRect(0, 0, viewport.width, viewport.height);
+
+      await page.render({ canvasContext: context, viewport }).promise;
+      rendering = false;
+      setStatus();
+    };
+
+    try {
+      pdf = await pdfjsLib.getDocument({ url: viewer.dataset.pdfSrc }).promise;
+      setStatus();
+      await renderPage();
+    } catch (error) {
+      console.error(error);
+      fallback.hidden = false;
+      status.textContent = "Preview unavailable";
+      return;
+    }
+
+    previous.addEventListener("click", async () => {
+      if (pageNumber > 1) {
+        pageNumber -= 1;
+        await renderPage();
+      }
+    });
+
+    next.addEventListener("click", async () => {
+      if (pageNumber < pdf.numPages) {
+        pageNumber += 1;
+        await renderPage();
+      }
+    });
+
+    zoomIn.addEventListener("click", async () => {
+      scale = Math.min(scale + 0.2, 2.4);
+      await renderPage();
+    });
+
+    zoomOut.addEventListener("click", async () => {
+      scale = Math.max(scale - 0.2, 0.6);
+      await renderPage();
+    });
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(renderPage, 150);
+    });
+  };
+
+  document.querySelectorAll("[data-pdf-viewer]").forEach(renderViewer);
+</script>

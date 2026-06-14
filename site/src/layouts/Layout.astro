@@ -1,0 +1,31 @@
+---
+import { withBase } from "../utils/paths";
+import "../styles/global.css";
+
+const { title = "June Jam Game Showcase", description = "BuildingBloCS June Jam 2026 game showcase." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={withBase("/assets/images/buildingblocs-logo.svg")} />
+    <title>{title} | BuildingBloCS</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="nav">
+        <a class="brand" href={withBase("/")} aria-label="BuildingBloCS game showcase">
+          <img src={withBase("/assets/images/buildingblocs-logo.svg")} alt="BuildingBloCS" />
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href={withBase("/#winners")}>Winners</a>
+          <a href={withBase("/#specials")}>Special Prizes</a>
+        </nav>
+      </header>
+      <slot />
+    </div>
+  </body>
+</html>

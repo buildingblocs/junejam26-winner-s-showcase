@@ -1,0 +1,155 @@
+---
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
+import Layout from "../../layouts/Layout.astro";
+import PdfDeckViewer from "../../components/PdfDeckViewer.astro";
+import { games, type GameEntry } from "../../data/games";
+import { showcaseAssets } from "../../data/showcaseAssets";
+import { withBase } from "../../utils/paths";
+
+export function getStaticPaths() {
+  return games.map((game) => ({
+    params: { slug: game.slug },
+    props: { game },
+  }));
+}
+
+const { game } = Astro.props as { game: GameEntry };
+const asset = showcaseAssets[game.slug] ?? { sourceFiles: [] };
+const visibleLinks = game.links.filter((link) => {
+  const href = link.href.toLowerCase();
+  return !href.endsWith(".zip") && !href.endsWith(".pptx");
+});
+
+const tagClass = (tag: string) => {
+  if (tag.includes("Winner") || tag.includes("Runner")) return "rank";
+  if (tag === "Pygame" || tag === "Unity") return "track";
+  return "special";
+};
+
+const readPublicFile = (href: string) => {
+  const localPath = path.join(process.cwd(), "public", href.replace(/^\//, ""));
+  if (!existsSync(localPath)) return "Source file not found.";
+  return readFileSync(localPath, "utf8");
+};
+
+const sourcePreviews = asset.sourceFiles.map((file) => ({
+  ...file,
+  code: readPublicFile(file.href),
+}));
+---
+
+<Layout title={game.title} description={game.summary}>
+  <main class="container">
+    <section class="section-block compact">
+      <a class="button" href={withBase("/")}>Back to showcase</a>
+    </section>
+
+    <section class="detail-hero">
+      <div class="detail-media">
+        <img src={withBase(game.cover)} alt="" />
+      </div>
+      <div class="detail-copy">
+        <div class="tag-row">
+          <span class={`tag ${tagClass(game.track)}`}>{game.track}</span>
+          {game.awards.map((award) => <span class={`tag ${tagClass(award)}`}>{award}</span>)}
+        </div>
+        <p class="eyebrow">{game.teamCode} - {game.track}</p>
+        <h1>{game.title}</h1>
+        <p class="team">{game.team}</p>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <article class="writeup">
+        {game.writeup.split(/\n\s*\n/).map((paragraph) => <p>{paragraph}</p>)}
+      </article>
+
+      <aside class="side-panel">
+        <section class="play-panel">
+          <p class="eyebrow">Play</p>
+          <h3>Exact browser build</h3>
+          {
+            asset.playUrl ? (
+              <iframe
+                class="play-embed"
+                src={withBase(asset.playUrl)}
+                title={`${game.title} playable build`}
+                loading="lazy"
+                allow="autoplay; fullscreen; gamepad"
+                sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"
+              />
+            ) : (
+              <div class="play-frame">
+                <div>
+                  <p class="play-title">Export pending</p>
+                  <p class="play-note">{game.playNote}</p>
+                </div>
+              </div>
+            )
+          }
+        </section>
+
+        {visibleLinks.length > 0 && (
+          <section class="links-panel">
+            <p class="eyebrow">Files</p>
+            <h3>Slides and documents</h3>
+            <div class="link-list">
+              {visibleLinks.map((link) => <a class="mini-link" href={encodeURI(withBase(link.href))}>{link.label}</a>)}
+            </div>
+          </section>
+        )}
+      </aside>
+    </section>
+
+    <section class="showcase-section">
+      <div class="section-heading">
+        <p class="eyebrow">Slides</p>
+        <h2>Presentation deck</h2>
+      </div>
+      {
+        asset.slidePdf ? (
+          <PdfDeckViewer src={asset.slidePdf} title={`${game.title} presentation`} />
+        ) : (
+          <div class="empty-panel">
+            <h3>PDF preview pending</h3>
+            <p>This entry does not have a PDF export in the archive yet.</p>
+          </div>
+        )
+      }
+    </section>
+
+    <section class="showcase-section">
+      <div class="section-heading">
+        <p class="eyebrow">Source</p>
+        <h2>Full source</h2>
+      </div>
+      {
+        sourcePreviews.length > 0 ? (
+          <div class="code-grid">
+            {sourcePreviews.map((file, index) => (
+              <details class="code-panel" open={index === 0}>
+                <summary>
+                  <div>
+                    <p class="eyebrow">{file.language === "python" ? "Pygame" : "Unity C#"}</p>
+                    <h3>{file.label}</h3>
+                  </div>
+                  <span>Toggle source</span>
+                </summary>
+                <div class="source-link-row">
+                  <a href={encodeURI(withBase(file.href))}>Open raw source</a>
+                </div>
+                <pre><code>{file.code}</code></pre>
+              </details>
+            ))}
+          </div>
+        ) : (
+          <div class="empty-panel">
+            <h3>Source preview pending</h3>
+            <p>No readable source file was matched for this entry yet.</p>
+          </div>
+        )
+      }
+    </section>
+  </main>
+</Layout>
