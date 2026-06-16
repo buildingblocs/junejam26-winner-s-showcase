@@ -2,12 +2,27 @@
 
 ## Latest Verified State
 
-- P6 is confirmed playable and deployed. The site embeds `site/public/play/p6/index.html`, the GitHub Pages deployment renders the actual `ALARM CLOCK: THE AWAKENING` title screen in the iframe, and P6 uses `keyboardMode: "full"` for on-screen controls.
-- P26 has a staged browser port under `site/playable-src/p26/`, with copied original assets and browser-compatible OGG audio. It compiles and `pygbag --build --archive --no_ssl_check --cdn https://pygame-web.github.io/archives/0.9/ site/playable-src/p26` produces an export, but direct browser testing hung the Chrome execution context and did not show a ready/title signal within 25 seconds. It must remain unembedded until a real browser run is confirmed.
-- P1 also remains unembedded after a direct browser export test hung during runtime testing.
-- Only confirmed playable builds should appear under `site/public/play/` and receive `playUrl` entries.
+11 of the 12 entries are embedded and confirmed playable on the live GitHub
+Pages deployment (`https://buildingblocs.github.io/junejam26-showcase`). Each
+build was verified by loading it in headless Chromium and confirming the actual
+submitted game renders/progresses (see `tools/verify_build.py`).
 
-Last updated: 2026-06-14 Asia/Singapore.
+- Pygame (pygbag exports, all verified): P1, P6, P8, P14, P15, P26.
+- Unity (WebGL exports, verified): U2, U4, U8, U13, U16. U8 splits its 162 MB
+  data file into `Build/data-parts/part00`+`part01` (each under GitHub's 100 MB
+  limit) and reassembles them in `index.html`.
+- P17 (BREACH) is the only `Export pending` entry. It is a real-time
+  multiplayer game with an authoritative WebSocket server and no single-player
+  mode, so a faithful static embed is not possible without hosting that server.
+  Its play note states this blocker honestly.
+
+Staged browser ports live under `site/playable-src/<slug>/`; the original
+`winners/.../src` submissions are never modified. Port-only changes are limited
+to what pygbag/WebGL require (async loops, relative asset paths, pre-rendered
+audio for WASM, browser speech in place of macOS `say`). Build outputs are
+committed under `site/public/play/<slug>/`.
+
+Last updated: 2026-06-17 Asia/Singapore.
 
 ## Repository State
 
