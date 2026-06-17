@@ -115,23 +115,24 @@ class BotBrain:
         return random.choice(SPECIALTIES)
 
     async def run(self):
-        await asyncio.sleep(1.5)
+        await asyncio.sleep(1.0)
         await self._send({"type": "join", "name": self.name})
-        # Let the human pick a specialty first so they always get the one they
-        # want; only choose once they've picked (or after a patient timeout).
-        waited = 0.0
-        while waited < 12.0:
-            await asyncio.sleep(0.5)
-            waited += 0.5
-            if server.game_status != "lobby":
-                break
+        # The human ALWAYS picks their specialty first. There is no time
+        # pressure here: the lobby cannot start until everyone is ready, and the
+        # human can't ready without a specialty (MIN_PLAYERS = 3), so the bots
+        # just wait — with no wall-clock timeout — until the human has chosen,
+        # then take whatever is left. (A previous boot-relative timeout let the
+        # bots grab specialties before a slow human even reached the screen.)
+        while server.game_status == "lobby":
             human = server.players.get(self.human_id)
             if human and human.get("specialty"):
                 break
-        await asyncio.sleep(0.4 + 0.4 * self.order)  # stagger the two bots
-        await self._send({"type": "select_role", "role": self._available_specialty()})
-        await asyncio.sleep(0.6)
-        await self._send({"type": "ready", "ready": True})
+            await asyncio.sleep(0.3)
+        await asyncio.sleep(0.3 + 0.3 * self.order)  # stagger the two bots
+        if server.game_status == "lobby":
+            await self._send({"type": "select_role", "role": self._available_specialty()})
+            await asyncio.sleep(0.5)
+            await self._send({"type": "ready", "ready": True})
 
         voted = False
         while True:
