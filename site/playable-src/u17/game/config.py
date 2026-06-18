@@ -1,0 +1,61 @@
+
+
+WIDTH = 1280
+HEIGHT = 720
+FPS = 60
+
+
+ARENA_RECT = (
+    40,
+    40,
+    WIDTH - 80,
+    HEIGHT - 120,
+)
+
+GROUND_Y = HEIGHT - 80
+
+
+
+PLAYER_SIZE = (
+    40,
+    40,
+)
+
+BLOCK_SIZE = 64
+
+
+
+BLACK = (15, 15, 20)
+
+WHITE = (255, 255, 255)
+
+GRAY = (90, 90, 90)
+
+DARK = (35, 35, 45)
+
+CYAN = (60, 220, 255)
+
+MAGENTA = (255, 80, 220)
+
+GREEN = (50, 255, 80)
+
+RED = (255, 70, 70)
+
+YELLOW = (255, 220, 50)
+
+ORANGE = (255, 150, 40)
+
+PURPLE = (180, 80, 255)
+
+
+STARTING_LIVES = 3
+
+BLOCK_COOLDOWN = 300
+
+MALWARE_DAMAGE = 1
+
+MALWARE_SPEED = 7
+
+MALWARE_SIZE = 60
+
+EVENT_GRACE_PERIOD = 5000

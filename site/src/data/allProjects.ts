@@ -45,6 +45,7 @@ const pygame: DirectoryEntry[] = [
       "The idea came from playing with a cat, a laser, and a mirror, which became a puzzle game where you bounce lasers off mirrors to trigger sensors. The team split the work evenly to survive the time crunch and watched a lot of tutorials as Python beginners, ironing out a long list of bugs along the way.",
     slides: "https://canva.link/u9ttjtb5jt7zlpn",
     source: "https://drive.google.com/drive/folders/1_KN3epJm67Mj-AFUfUSd1sOjoaTJzYHA?usp=sharing",
+    playSlug: "p4",
   },
   {
     id: "p5",
@@ -178,13 +179,14 @@ const pygame: DirectoryEntry[] = [
     id: "p24",
     code: "P24",
     track: "Pygame",
-    title: "",
+    title: "Cognitor",
     team: "Diana Tkalich, Annis Guee Ling Xuan, Ng Chyng Yi, Nguyen Ngoc Khanh Duy",
     blurb: "A multi-genre visual novel inspired by Ace Attorney and Papers, Please.",
     writeup:
       "A multi-genre visual novel inspired by Ace Attorney and Papers, Please, drawing on real-world politics and cyber threats where the weapons shift from artillery to computers. With only three days, the team maximised efficiency by delegating to each member's strengths.",
     slides: "https://canva.link/ccfnzcneuiwm5xz",
     source: "https://drive.google.com/drive/folders/1Dq3hu5zoKj41LNhtRxF-YkFW-9RImMcz?usp=sharing",
+    playSlug: "p24",
   },
   {
     id: "p25",
@@ -216,13 +218,14 @@ const pygame: DirectoryEntry[] = [
     id: "p28",
     code: "P28",
     track: "Pygame",
-    title: "",
+    title: "Eraser Buddy",
     team: "Belicia Koh Xin Yu, Syesha Arora, Mavis Lee Xuan Ying, Radhakrishnan Shriraam",
     blurb: "Bond with an eraser that comes to life over a week.",
     writeup:
       "Bored students fidgeting with stationery inspired a game where an eraser comes to life and bonds with you over a week. As first-time game makers, the team kept the scope tight (one scene, simple sprites) and learned from friends, tutorials, and the workshop sample code through long nights of coding.",
     slides: "https://docs.google.com/presentation/d/1VXXa7BcpAQHdgZ06VM35Bph4w9mhBvB_/edit?usp=sharing&ouid=108415034079040757144&rtpof=true&sd=true",
     source: "https://drive.google.com/drive/folders/1YaoeRkAuDcogX57acRVwB5hqHJ3T77Ky?usp=sharing",
+    playSlug: "p28",
   },
   {
     id: "p29",
@@ -448,13 +451,14 @@ const unity: DirectoryEntry[] = [
     id: "u17",
     code: "U17",
     track: "Unity",
-    title: "",
+    title: "Out of Sync",
     team: "Kingzly Yew Min Jin, Cody Charles Carpenter, Jaron Chew Kai Xin",
     blurb: "A two-player game about avoiding malware, inspired by ROUNDS.",
     writeup:
       "Inspired by ROUNDS, the team set out to teach the public to avoid malware through a two-player, last-one-standing duel with between-round power-ups. Losing a designer and manpower late forced them to make their own graphics and scope down, but they pushed the idea as far as the time allowed.",
     slides: "https://docs.google.com/presentation/d/1mNzcUP3_2env0Blbxy3kG-tW6KZzd3XyK99WzvkcJes/edit?usp=sharing",
     source: "https://drive.google.com/drive/folders/1mfnUEDz1NzfNxdYX4tgZT5KgIbRYZ4Hb?usp=sharing",
+    playSlug: "u17",
   },
   {
     id: "u18",
