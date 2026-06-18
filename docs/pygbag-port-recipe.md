@@ -76,6 +76,18 @@ python3 -m pygbag --build main.py     # runs in background; it WILL hang on a
   bug to fix before declaring success.
 - Confirm the apk contains your code: `unzip -l build/web/<slug>.apk | grep main.py`
 
+## Big apks → R2
+If a build's apk is large (>~20 MB, usually from bundled audio — e.g. P27's
+jukebox), don't commit it. Upload it to R2 and point the loader at it:
+```
+# upload site/public/play/<slug>/<slug>.apk to R2 key play/<slug>/<slug>.apk
+# then in site/public/play/<slug>/index.html change:
+#   apk = "<slug>.apk"  ->  apk = "https://pub-be8869…r2.dev/play/<slug>/<slug>.apk?v=r2"
+# and delete the local apk (the index.html + favicon stay committed)
+```
+pygbag's loader fetches the apk by URL, and R2 serves a single correct CORS
+header, so it loads cross-origin fine (verified with P27).
+
 ## Notes
 - The benign console lines `<slug>.apk 0`, `cannot download <slug>.apk`,
   `Received N of 0`, and the `statSync` uncaught-promise appear for EVERY pygbag
