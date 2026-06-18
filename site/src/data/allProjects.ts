@@ -99,6 +99,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Math and science quizzes feeding a turn-based combat grid.",
     slides: "https://docs.google.com/presentation/d/1C02zTeSt6O4hFY5dY9nfhjVnCH9vqFi_mVLXjto7pzc/edit?usp=sharing",
     source: "https://github.com/superkingdsk-ux/Pygame_P16",
+    playSlug: "p16",
   },
   {
     id: "p19",
@@ -189,6 +190,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A Mario-inspired platformer with a boss fight.",
     slides: "https://docs.google.com/presentation/d/1dM4M1ckJARxakXu1xfqArjZptKXbFD5JbpcgE30h_lc/edit?usp=sharing",
     source: "https://github.com/syedammad22011-cloud/Ninten-s-grand-Adventure",
+    playSlug: "p29",
   },
   {
     id: "p31",
@@ -214,12 +216,13 @@ const pygame: DirectoryEntry[] = [
     id: "p33",
     code: "P33",
     track: "Pygame",
-    title: "",
+    title: "FootBottle",
     team: "Jagadev Sivaraj, Arun Roshan, Vijayan Devi Hari",
-    blurb: "A Pygame entry — see the write-up and slides.",
+    blurb: "A two-player bottle-kick soccer game.",
     slides: "https://canva.link/51mvoy72hevlofw",
     source: "https://github.com/vdhari-programmer/Pygame_P33",
     doc: "https://docs.google.com/document/d/1u-6Hm-mZFgSKjxYLIsjYEbLW_H5sNGkbODdOT4veHPc/edit?usp=sharing",
+    playSlug: "p33",
   },
 ];
 
