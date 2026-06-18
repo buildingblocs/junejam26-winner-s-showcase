@@ -341,11 +341,12 @@ const unity: DirectoryEntry[] = [
     id: "u14",
     code: "U14",
     track: "Unity",
-    title: "",
+    title: "Jim",
     team: "Zheng Zixuan, Kate Lin Ker Tang, Chan Zaw Shine",
     blurb: "A Unity entry — see the write-up and slides.",
     slides: "https://canva.link/4ofb3zngx019zvy",
     source: "https://github.com/Kaloo930/U_14",
+    playSlug: "u14",
     doc: "https://docs.google.com/document/d/1Tj0bnPwu3FuUFzSTdO71OWn0ygGoCJt0lqHp3RzXjoc/edit",
   },
   {

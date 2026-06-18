@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity Web Player | Jim</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  </head>
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div>
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-logo-title-footer"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Jim</div>
+      </div>
+    </div>
+    <script>
+      var canvas = document.querySelector("#unity-canvas");
+      function unityShowBanner(msg, type) {
+        var b = document.querySelector("#unity-warning");
+        function upd() { b.style.display = b.children.length ? 'block' : 'none'; }
+        var div = document.createElement('div'); div.innerHTML = msg; b.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else { if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() { b.removeChild(div); upd(); }, 5000); }
+        upd();
+      }
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/u14.loader.js";
+      var config = {
+        arguments: [],
+        dataUrl: "https://pub-be8869d68a2b4911bc34532d32ceb12b.r2.dev/play/u14/Build/u14.data.unityweb?v=r2",
+        frameworkUrl: buildUrl + "/u14.framework.js.unityweb",
+        codeUrl: "https://pub-be8869d68a2b4911bc34532d32ceb12b.r2.dev/play/u14/Build/u14.wasm.unityweb?v=r2",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "Jim",
+        productVersion: "0.1.0",
+        showBanner: unityShowBanner,
+      };
+      config.devicePixelRatio = 1;
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        document.querySelector("#unity-container").className = "unity-mobile";
+        canvas.className = "unity-mobile";
+      } else {
+        config.matchWebGLToCanvasSize = true;
+        var BASE_W = 960, BASE_H = 600;
+        var fitCanvas = function () {
+          var scale = Math.min(window.innerWidth / BASE_W, window.innerHeight / BASE_H);
+          canvas.style.width = Math.round(BASE_W * scale) + "px";
+          canvas.style.height = Math.round(BASE_H * scale) + "px";
+        };
+        fitCanvas(); window.addEventListener("resize", fitCanvas);
+      }
+      document.querySelector("#unity-loading-bar").style.display = "block";
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (p) => {
+          document.querySelector("#unity-progress-bar-full").style.width = 100 * p + "%";
+        }).then((u) => {
+          document.querySelector("#unity-loading-bar").style.display = "none";
+          document.querySelector("#unity-fullscreen-button").onclick = () => u.SetFullscreen(1);
+        }).catch((m) => alert(m));
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
