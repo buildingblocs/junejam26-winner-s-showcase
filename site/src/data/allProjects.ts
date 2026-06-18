@@ -285,6 +285,16 @@ const unity: DirectoryEntry[] = [
     source: "https://drive.google.com/drive/folders/1zU1B4Z4PcuRRdtk0ZeVc1emOH8hbWWUt?usp=sharing",
   },
   {
+    id: "u7b",
+    code: "U7b",
+    track: "Unity",
+    title: "",
+    team: "Ng Chee Yong",
+    blurb: "Get characters with different lives ready for the day.",
+    slides: "https://docs.google.com/presentation/d/1Zk5Jpv2ot5BhM1t5UezZ45-yBvf_WE8_AYGCoPJM_gc/edit?usp=sharing",
+    source: "https://drive.google.com/drive/u/0/folders/13yyoIY3Y8Gpatj-H-fEBljwwE8R6FGzk",
+  },
+  {
     id: "u9",
     code: "U9",
     track: "Unity",
