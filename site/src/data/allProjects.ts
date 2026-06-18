@@ -133,6 +133,7 @@ const pygame: DirectoryEntry[] = [
       "Set in a normal bedroom where everyday stationery turns into monsters, the player hunts and defeats pencils, rulers, erasers and staplers. Tight deadlines forced the team to simplify their battle system and use simple shapes instead of detailed sprites, testing each feature step by step.",
     slides: "https://canva.link/z1yrph23fl5vg7d",
     source: "https://drive.google.com/drive/folders/1SLWxuBHVRm7AuNI32-pzX793uZyBnNx5?usp=sharing",
+    playSlug: "p19",
   },
   {
     id: "p20",
@@ -341,13 +342,14 @@ const unity: DirectoryEntry[] = [
     id: "u7b",
     code: "U7b",
     track: "Unity",
-    title: "",
+    title: "Day2Day!",
     team: "Ng Chee Yong",
     blurb: "Get characters with different lives ready for the day.",
     writeup:
       "The team set out to question what 'everyday' even means, building a game where you control different characters, each with different circumstances, all working toward the shared goal of getting ready for the day. Facing a large original scope, they downsized, taking assets from itch.io and trimming redundant characters and level size.",
     slides: "https://docs.google.com/presentation/d/1Zk5Jpv2ot5BhM1t5UezZ45-yBvf_WE8_AYGCoPJM_gc/edit?usp=sharing",
     source: "https://drive.google.com/drive/u/0/folders/13yyoIY3Y8Gpatj-H-fEBljwwE8R6FGzk",
+    playSlug: "u7b",
   },
   {
     id: "u9",

@@ -87,11 +87,11 @@ const isPlayable = Boolean(entry.playUrl);
 // so visitors aren't surprised by a large fetch (Unity numbers are wasm + data).
 const playSize: Record<string, string> = {
   u8: "~180 MB", u13: "~85 MB", u4: "~75 MB", u2: "~70 MB", u16: "~70 MB",
-  u6: "~70 MB", u1: "~30 MB", u14: "~12 MB", u15a: "~23 MB", u18: "~18 MB", u11: "~23 MB",
+  u6: "~70 MB", u1: "~30 MB", u14: "~12 MB", u15a: "~23 MB", u18: "~18 MB", u11: "~23 MB", u7b: "~22 MB",
   p26: "~15 MB", p17: "~10 MB", p1: "~10 MB", p6: "~10 MB", p8: "~10 MB",
   p14: "~10 MB", p15: "~10 MB", p3: "~14 MB", p23: "~14 MB", p12: "~15 MB",
   p5: "~10 MB", p9: "~10 MB", p10: "~10 MB", p16: "~10 MB", p20: "~10 MB",
-  p22: "~10 MB", p29: "~10 MB", p33: "~10 MB", u10: "~10 MB",
+  p22: "~10 MB", p19: "~10 MB", p29: "~10 MB", p33: "~10 MB", u10: "~10 MB",
 };
 // Short control hints, only for builds whose controls were confirmed.
 const playControls: Record<string, string> = {
@@ -102,6 +102,7 @@ const playControls: Record<string, string> = {
   u4: "Move WASD · Look with the mouse · Click to interact",
   p10: "Move with WASD / arrows · pause Space or Esc",
   p5: "Click the answer buttons with the mouse",
+  p19: "Move with WASD / arrows",
   u18: "Move WASD · Interact E · Click the menu buttons",
 };
 const sizeLabel = playSize[entry.slug] ?? "";
