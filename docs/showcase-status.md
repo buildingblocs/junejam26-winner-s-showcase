@@ -43,7 +43,13 @@ U2, U4, U8, U13, U16.
 | **P13** | No source link was ever submitted ("Track_P13") |
 | **U5** | Source listed as "Nil" |
 
-## Slides (`site/public/slides/<id>.pdf`, embedded via `PdfDeckViewer`)
+## Slides (`site/public/slides/<id>/`, embedded via `PdfDeckViewer`)
+
+Each deck lives in its own folder: `<id>.pdf` (download fallback) plus
+pre-rendered `slide-NN.jpg` (`pdftoppm -jpeg -scale-to-x 1100 -jpegopt quality=82`).
+`getSlideImages()` finds the `slide-NN` siblings of `slidePdf`, so the viewer
+runs in **image mode** — slides show on page load with progressive preloading,
+no "Load deck" click — exactly like the winner decks. 446 images / 34 decks.
 
 **34 of 35 directory entries have an embedded deck.** Google Slides decks
 export cleanly with `curl …/export/pdf`. Canva/OneDrive/iCloud have no public
