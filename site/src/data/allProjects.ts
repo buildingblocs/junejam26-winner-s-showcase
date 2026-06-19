@@ -464,8 +464,8 @@ const unity: DirectoryEntry[] = [
     writeup:
       "Cyberbound turns cybersecurity into a dungeon RPG where you learn Python basics and reverse engineering by exploring areas and solving logic challenges to earn access keys. Late in development much of the code broke, so the developer simplified back to a stable core loop (move, interact, complete challenges) to ship a working prototype.",
     slides: "https://canva.link/7u0cmoh0bc3ae4e",
-    source: "https://github.com/royaleleaf/CyberBound",
-  },
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u15b",
+    playSlug: "u15b",  },
   {
     id: "u17",
     code: "U17",
