@@ -376,14 +376,15 @@ const unity: DirectoryEntry[] = [
     id: "u9",
     code: "U9",
     track: "Unity",
-    title: "",
+    title: "The Things We Leave Behind",
     team: "Asmita Gowri Kallam, Ong Yun Qing, Tan Yi Cong Aidan, Ariel Joshua Lau",
     blurb: "A nostalgic action game set in a school warped by memory.",
     writeup:
       "Reframing a liminal-horror idea into a story about nostalgia, the team set the game in a school warped by the protagonist's memories, asking whether too much nostalgia can do more harm than good. The project was ambitious for three days, so they split into music, art, and coding and pushed to deliver a slower, introspective experience.",
     slidePdf: "/slides/u9.pdf",
     slides: "https://docs.google.com/presentation/d/1-idy6nY81iDYMu3mUOBw6eGnci0_hq_qd205QuxF8XY/edit?usp=sharing",
-    source: "https://drive.google.com/drive/folders/1_k5EM6o0QSCyX-UDBdtgvqhVNMPgH2oN?usp=sharing",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u9",
+    playSlug: "u9",
   },
   {
     id: "u10",
