@@ -229,6 +229,9 @@ const backLabel = entry.isWinner ? "Back to showcase" : "Back to all projects";
                       Tap to load the build{sizeLabel ? ` · ${sizeLabel}` : ""}
                     </span>
                   </button>
+                  <button class="embed-restart" type="button" data-embed-restart title="Restart game" hidden>
+                    ↻
+                  </button>
                   <button class="embed-fullscreen" type="button" data-embed-fullscreen title="Fullscreen" hidden>
                     ⛶
                   </button>
@@ -394,8 +397,16 @@ const backLabel = entry.isWinner ? "Back to showcase" : "Back to all projects";
     const iframe = wrap.querySelector("[data-play-embed]");
     const loader = wrap.querySelector("[data-play-loader]");
     const fullscreenButton = wrap.querySelector("[data-embed-fullscreen]");
+    const restartButton = wrap.querySelector("[data-embed-restart]");
     const panel = wrap.closest(".play-panel");
     const keyboard = panel?.querySelector("[data-game-keyboard]");
+
+    const focusGame = () => {
+      window.setTimeout(() => {
+        iframe?.focus();
+        iframe?.contentWindow?.focus();
+      }, 150);
+    };
 
     loader?.addEventListener("click", () => {
       if (iframe && iframe.dataset.src && !iframe.src) {
@@ -403,11 +414,18 @@ const backLabel = entry.isWinner ? "Back to showcase" : "Back to all projects";
       }
       wrap.classList.add("is-loaded");
       if (fullscreenButton) fullscreenButton.hidden = false;
+      if (restartButton) restartButton.hidden = false;
       if (keyboard && isTouchDevice) keyboard.hidden = false;
-      window.setTimeout(() => {
-        iframe?.focus();
-        iframe?.contentWindow?.focus();
-      }, 150);
+      focusGame();
+    });
+
+    // Restart: reload the game build from scratch (works for every game without
+    // needing an in-game restart key).
+    restartButton?.addEventListener("click", () => {
+      if (iframe && iframe.dataset.src) {
+        iframe.src = iframe.dataset.src;
+        focusGame();
+      }
     });
 
     fullscreenButton?.addEventListener("click", () => {
