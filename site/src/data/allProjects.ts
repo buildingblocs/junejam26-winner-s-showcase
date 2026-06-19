@@ -31,7 +31,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A Hollow Knight–inspired street fighter built around a pen weapon.",
     writeup:
       "The team took inspiration from Hollow Knight and a classmate's pen 'gun' to build a fighting game. They originally aimed for a platformer, but their wall-collision code would not come together in time, so they pivoted to a focused street-fighter-style duel. Getting gravity and collisions stable was their hardest problem, and the one place they leaned on AI for help.",
-    slidePdf: "/slides/p3.pdf",
+    slidePdf: "/slides/p3/p3.pdf",
     slides: "https://docs.google.com/presentation/d/1yIwy3addzJ42DcvafPojfsHZIBkzhcZhPlH9ukvY5ao/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p3",
     playSlug: "p3",
@@ -45,7 +45,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Aim lasers through mirrors to trigger sensors.",
     writeup:
       "The idea came from playing with a cat, a laser, and a mirror, which became a puzzle game where you bounce lasers off mirrors to trigger sensors. The team split the work evenly to survive the time crunch and watched a lot of tutorials as Python beginners, ironing out a long list of bugs along the way.",
-    slidePdf: "/slides/p4.pdf",
+    slidePdf: "/slides/p4/p4.pdf",
     slides: "https://canva.link/u9ttjtb5jt7zlpn",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p4",
     playSlug: "p4",
@@ -59,7 +59,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Answer math questions to grow a colourful virtual garden.",
     writeup:
       "Math Garden turns repetitive math practice into a magical garden that grows with every correct answer, aimed at making revision feel rewarding for younger learners. The team's challenge was writing questions that were approachable yet still engaging, and building the buttons, timers, and scoring in Pygame as beginners.",
-    slidePdf: "/slides/p5.pdf",
+    slidePdf: "/slides/p5/p5.pdf",
     slides: "https://canva.link/68152ngqpgta5fh",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p5",
     playSlug: "p5",
@@ -73,7 +73,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A fast, beginner-friendly laundry-sorting mini-game.",
     writeup:
       "Sock Frenzy turns the chore of sorting laundry into a quick, beginner-friendly catching game. After a sudden change of teammates the group re-planned everything, leaning on Pygame's built-in collision handling and Piskel pixel art, and tuning difficulty by adjusting spawn rates.",
-    slidePdf: "/slides/p9.pdf",
+    slidePdf: "/slides/p9/p9.pdf",
     slides: "https://docs.google.com/presentation/d/1OiUvG-CvmmnrxZTHtv7tLvIIsdKRvemvyI7bX5sBXdg/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p9",
     playSlug: "p9",
@@ -87,7 +87,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A Crossy Road–style game about the dangers of jaywalking.",
     writeup:
       "Inspired by Crossy Road, Traffic Crosser is an arcade game about the dangers of jaywalking, with unpredictable traffic to dodge. The team balanced fairness against difficulty using traffic lights, spawn timers, and spacing checks, and used interpolation to keep player movement and the camera smooth.",
-    slidePdf: "/slides/p10.pdf",
+    slidePdf: "/slides/p10/p10.pdf",
     slides: "https://1drv.ms/p/c/ca4d6a21190140e7/IQA8kfbA89FVQ671Otv43N5uAUpS4951atgufT6CwgIS0rg?e=CMBA70",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p10",
     playSlug: "p10",
@@ -101,7 +101,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Overcooked-style post-meal cleanup against the clock.",
     writeup:
       "Drawing on Overcooked and the chaos of post-meal cleanup, Tabletop Madness is a time-pressured washing-up game meant to spark gratitude for everyday acts of care. A last-minute team change left them one day to work together, and they fixed a tricky baby-hand grabbing bug by giving it its own move() method in the main loop.",
-    slidePdf: "/slides/p12.pdf",
+    slidePdf: "/slides/p12/p12.pdf",
     slides: "https://canva.link/ztamrdw310wbxhm",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p12",
     playSlug: "p12",
@@ -115,7 +115,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A world reclaimed by animals and nature once humans are gone.",
     writeup:
       "The team imagined a world without humans, where the animals and nature they displaced reclaim the land and flourish. Coding was a steep learning curve and Blender was a struggle, but resources like BlenderKit helped them bring the idea to life.",
-    slidePdf: "/slides/p13.pdf",
+    slidePdf: "/slides/p13/p13.pdf",
     slides: "https://docs.google.com/presentation/d/1_HY52FX9kMA4PmQtQT-7u81MxvduYLMv/edit?usp=sharing&ouid=110445985428380708878&rtpof=true&sd=true",
   },
   {
@@ -127,7 +127,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Math and science quizzes feeding a turn-based combat grid.",
     writeup:
       "School Day Adventure tackles low engagement in revision by wrapping Math and Science quizzes around a turn-based 'Grid Wars' combat engine, with a shop in between. Almost everything (screens, grid coordinate conversion, pathfinding, and timing states) was hand-coded in Pygame; AI was used only to build a clean text-wrapping utility for the question UI.",
-    slidePdf: "/slides/p16.pdf",
+    slidePdf: "/slides/p16/p16.pdf",
     slides: "https://docs.google.com/presentation/d/1C02zTeSt6O4hFY5dY9nfhjVnCH9vqFi_mVLXjto7pzc/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p16",
     playSlug: "p16",
@@ -141,7 +141,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Hunt and defeat stationery monsters loose in your bedroom.",
     writeup:
       "Set in a normal bedroom where everyday stationery turns into monsters, the player hunts and defeats pencils, rulers, erasers and staplers. Tight deadlines forced the team to simplify their battle system and use simple shapes instead of detailed sprites, testing each feature step by step.",
-    slidePdf: "/slides/p19.pdf",
+    slidePdf: "/slides/p19/p19.pdf",
     slides: "https://canva.link/z1yrph23fl5vg7d",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p19",
     playSlug: "p19",
@@ -155,7 +155,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Shrunk down to collect materials and craft your way out, top-down.",
     writeup:
       "After being shrunk down, the player collects materials and crafts inventions in a top-down world. Originally planned as a small metroidvania, the solo developer cut it to the crafting core when teammates went unreachable, rebuilding the game from scratch on the final day.",
-    slidePdf: "/slides/p20.pdf",
+    slidePdf: "/slides/p20/p20.pdf",
     slides: "https://docs.google.com/presentation/d/1u_TWuNltT0e359ZXWxKnU6uv70OoZQmjyJJczQPybvA/edit",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p20",
     playSlug: "p20",
@@ -169,7 +169,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A Blooket-inspired game for learning Python basics.",
     writeup:
       "Inspired by Blooket, Adaptation integrates questions into levelling up and upgrades so players learn Python basics while they play. With only two days and core workshops to attend, the team split the work to finish planning, coding, and slides before the deadline.",
-    slidePdf: "/slides/p22.pdf",
+    slidePdf: "/slides/p22/p22.pdf",
     slides: "https://canva.link/mg6p9cntarwx52w",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p22",
     playSlug: "p22",
@@ -183,7 +183,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A team-built quest with hand-written code and music.",
     writeup:
       "Named after the teammate who powered through its code, Kavin's Quest is a quest game the group built by dividing roles across code, debugging, slides, and music. Debugging and time management were their biggest hurdles, solved by clear roles and steady communication.",
-    slidePdf: "/slides/p23.pdf",
+    slidePdf: "/slides/p23/p23.pdf",
     slides: "https://docs.google.com/presentation/d/1DD9ybYNsmNy1wAdUdknpz5wfZUvYy1X35q5npOoEBfQ/edit",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p23",
     playSlug: "p23",
@@ -197,7 +197,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A multi-genre visual novel inspired by Ace Attorney and Papers, Please.",
     writeup:
       "A multi-genre visual novel inspired by Ace Attorney and Papers, Please, drawing on real-world politics and cyber threats where the weapons shift from artillery to computers. With only three days, the team maximised efficiency by delegating to each member's strengths.",
-    slidePdf: "/slides/p24.pdf",
+    slidePdf: "/slides/p24/p24.pdf",
     slides: "https://canva.link/ccfnzcneuiwm5xz",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p24",
     playSlug: "p24",
@@ -211,7 +211,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Keep a blooming, withering flower alive under time pressure.",
     writeup:
       "The team initially chased the CSIT prize before realising none of them knew cybersecurity, then settled on a plant-tending game where a flower blooms and withers under time pressure. Drawing and scaling the flower's many states was a last-day scramble, and adding a single class often broke other game logic.",
-    slidePdf: "/slides/p25.pdf",
+    slidePdf: "/slides/p25/p25.pdf",
     slides: "https://canva.link/prx28c3a8ynum3z",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p25",
     playSlug: "p25",
@@ -225,7 +225,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Turns the shared experience of exams into a game.",
     writeup:
       "The Exam turns the universally shared experience of sitting an exam into a game. The team considered an ambitious time-travel storyline before scoping it down, and pushed through tight deadlines, limited manpower and skill gaps with open communication and compromise.",
-    slidePdf: "/slides/p27.pdf",
+    slidePdf: "/slides/p27/p27.pdf",
     slides: "https://www.canva.com/design/DAHMPjSh3vw/0KJj6xDkLpoL6OlB-lQ0ag/edit?ui=e30",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p27",
     playSlug: "p27",
@@ -239,7 +239,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "Bond with an eraser that comes to life over a week.",
     writeup:
       "Bored students fidgeting with stationery inspired a game where an eraser comes to life and bonds with you over a week. As first-time game makers, the team kept the scope tight (one scene, simple sprites) and learned from friends, tutorials, and the workshop sample code through long nights of coding.",
-    slidePdf: "/slides/p28.pdf",
+    slidePdf: "/slides/p28/p28.pdf",
     slides: "https://docs.google.com/presentation/d/1VXXa7BcpAQHdgZ06VM35Bph4w9mhBvB_/edit?usp=sharing&ouid=108415034079040757144&rtpof=true&sd=true",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p28",
     playSlug: "p28",
@@ -253,7 +253,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A Mario-inspired platformer with a boss fight.",
     writeup:
       "A Mario-inspired platformer born from the team's love of Nintendo, complete with a boss that attacks at randomised intervals. They wrestled with background colours, swapping character images, and boss movement, tweaking the code repeatedly until it behaved.",
-    slidePdf: "/slides/p29.pdf",
+    slidePdf: "/slides/p29/p29.pdf",
     slides: "https://docs.google.com/presentation/d/1dM4M1ckJARxakXu1xfqArjZptKXbFD5JbpcgE30h_lc/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p29",
     playSlug: "p29",
@@ -267,7 +267,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "An awareness game about depression, ADHD and self-esteem.",
     writeup:
       "Built to raise awareness of depression and ADHD, the game represents how negative thoughts chip away at self-esteem. Along the way the team solved the everyday frustration of hard-coded positioning by figuring out how to centre elements against Pygame's coordinate system.",
-    slidePdf: "/slides/p31.pdf",
+    slidePdf: "/slides/p31/p31.pdf",
     slides: "https://canva.link/fwqxa809dtzeekf",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p31",
     playSlug: "p31",
@@ -294,7 +294,7 @@ const pygame: DirectoryEntry[] = [
     blurb: "A two-player bottle-kick soccer game.",
     writeup:
       "FootBottle is a two-player bottle-kick soccer game. The team divided the work across code, error-fixing, slides, and music, motivated by a teammate who pushed through all of the coding.",
-    slidePdf: "/slides/p33.pdf",
+    slidePdf: "/slides/p33/p33.pdf",
     slides: "https://canva.link/51mvoy72hevlofw",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/p33",
     doc: "https://docs.google.com/document/d/1u-6Hm-mZFgSKjxYLIsjYEbLW_H5sNGkbODdOT4veHPc/edit?usp=sharing",
@@ -313,7 +313,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A paper character transforms into a ball or plane to platform.",
     writeup:
       "The team picked paper as a household object that could transform, then built a 2D Super Mario-style platformer where a paper character morphs into a ball or plane to clear levels. They handled a non-contributing teammate by re-planning around three people and smoothed out jumping bugs by reading through the code.",
-    slidePdf: "/slides/u1.pdf",
+    slidePdf: "/slides/u1/u1.pdf",
     slides: "https://www.icloud.com/keynote/0115tZWaTGrmW_BQgsFH2-eLg",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u1",
     playSlug: "u1",
@@ -327,7 +327,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A bar of soap escapes a sink as the water rises.",
     writeup:
       "The Great Sink Escape casts you as a bar of soap escaping a sink as the water, and the pressure, rises. Unable to collaborate easily in Unity, the team split the work and refined the platform layout through repeated testing and communication.",
-    slidePdf: "/slides/u3.pdf",
+    slidePdf: "/slides/u3/u3.pdf",
     slides: "https://docs.google.com/presentation/d/1-Na0hsQRCeP-WuOojgN2AuKFFm2ec_WcF21qdygooNc/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u3",
     playSlug: "u3",  },
@@ -340,7 +340,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A roguelike about little creatures fighting each other.",
     writeup:
       "Inspired by a YouTube video about little creatures fighting each other, the team built a roguelike around that core loop.",
-    slidePdf: "/slides/u5.pdf",
+    slidePdf: "/slides/u5/u5.pdf",
     slides: "https://canva.link/k5c1aepcmx8k90f",
   },
   {
@@ -352,7 +352,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A magic paintbrush restores colour and hidden memories.",
     writeup:
       "Asking what the opposite of a grey, repeating routine looks like, the team landed on colour: a world that lost its colour because people stopped looking closely, restored by a magic paintbrush that reveals the memories hidden inside ordinary things. They tied the message to the mechanic, since painting an object unlocks one of the player's memories, and added a countdown to give the quiet reflection real stakes.",
-    slidePdf: "/slides/u6.pdf",
+    slidePdf: "/slides/u6/u6.pdf",
     slides: "https://docs.google.com/presentation/d/1a_v-ZHaeqEhLahwTRQUccM5202tEo3fzwn7bsnstfz4/edit?usp=drivesdk",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u6",
     playSlug: "u6",
@@ -366,7 +366,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A block-puzzle RPG where clearing lines battles a boss.",
     writeup:
       "Exhausted and juggling exams, the team started with a casual Block Blast-style puzzle and, in a late-night spark, turned it into a roguelike RPG. A constant boss countdown makes the puzzle feel real-time: place blocks too slowly and the boss attacks, while clearing lines triggers combo counters.",
-    slidePdf: "/slides/u7a.pdf",
+    slidePdf: "/slides/u7a/u7a.pdf",
     slides: "https://docs.google.com/presentation/d/1fZOvBt5fgupj7JSgRxNYY8sx7RktNfh_ipito94A9Bk/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u7a",
     playSlug: "u7a",
@@ -380,7 +380,7 @@ const unity: DirectoryEntry[] = [
     blurb: "Get characters with different lives ready for the day.",
     writeup:
       "The team set out to question what 'everyday' even means, building a game where you control different characters, each with different circumstances, all working toward the shared goal of getting ready for the day. Facing a large original scope, they downsized, taking assets from itch.io and trimming redundant characters and level size.",
-    slidePdf: "/slides/u7b.pdf",
+    slidePdf: "/slides/u7b/u7b.pdf",
     slides: "https://docs.google.com/presentation/d/1Zk5Jpv2ot5BhM1t5UezZ45-yBvf_WE8_AYGCoPJM_gc/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u7b",
     playSlug: "u7b",
@@ -394,7 +394,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A nostalgic action game set in a school warped by memory.",
     writeup:
       "Reframing a liminal-horror idea into a story about nostalgia, the team set the game in a school warped by the protagonist's memories, asking whether too much nostalgia can do more harm than good. The project was ambitious for three days, so they split into music, art, and coding and pushed to deliver a slower, introspective experience.",
-    slidePdf: "/slides/u9.pdf",
+    slidePdf: "/slides/u9/u9.pdf",
     slides: "https://docs.google.com/presentation/d/1-idy6nY81iDYMu3mUOBw6eGnci0_hq_qd205QuxF8XY/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u9",
     playSlug: "u9",
@@ -408,7 +408,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A cybersecurity escape room played from the hacker's seat.",
     writeup:
       "Motivated by the CSIT prize, the team put the player in the hacker's seat of a cybersecurity escape room so they would appreciate how attackers use data, a CTF-like, story-driven experience. Working a four-person job with two people and little Unity or C# experience, they leaned on adaptive systems to cope.",
-    slidePdf: "/slides/u10.pdf",
+    slidePdf: "/slides/u10/u10.pdf",
     slides: "https://docs.google.com/presentation/d/1BhsM7jW08zS-VZ_f3tNe8sKPGrLOfX5flCEdrG3TbeQ/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/u10",
     playSlug: "u10",
@@ -422,7 +422,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A Unity game dreamed up over a cup of Milo.",
     writeup:
       "Dreamed up over a cup of Milo, the team built their first Unity game while all of them were still learning C#. They overcame time, skill, and experience gaps by collaborating and each contributing what they could.",
-    slidePdf: "/slides/u11.pdf",
+    slidePdf: "/slides/u11/u11.pdf",
     slides: "https://docs.google.com/presentation/d/12f6U52jRNBCplCPaIN8TL_l_0ZTiZ5BwQMv2lYQFGrE/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u11",
     playSlug: "u11",
@@ -436,7 +436,7 @@ const unity: DirectoryEntry[] = [
     blurb: "Horror where you play a house cat that isn't home alone.",
     writeup:
       "A teammate's love of horror led to a game where you play a house cat in a lovely home, only to find it is not alone. New to coding for games, the team learned from any resource they could find to ship a tense experience in just over a day.",
-    slidePdf: "/slides/u12.pdf",
+    slidePdf: "/slides/u12/u12.pdf",
     slides: "https://docs.google.com/presentation/d/1HHLNlj_hII-tlmtBJCKL8jYnG3aOESv3va81B9rMEgE/edit?usp=drive_link",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u12",
     playSlug: "u12",
@@ -450,7 +450,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A Unity entry — see the write-up and slides.",
     writeup:
       "A Unity game that opens on a difficulty-select menu (Easy or Medium) fronted by a character named Jim. See the team's write-up and slides for the full concept.",
-    slidePdf: "/slides/u14.pdf",
+    slidePdf: "/slides/u14/u14.pdf",
     slides: "https://canva.link/4ofb3zngx019zvy",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u14",
     playSlug: "u14",
@@ -465,7 +465,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A Risk of Rain–style roguelike through a haunted house.",
     writeup:
       "Inspired by Risk of Rain, The Morning Routine is a roguelike where everyday household items inherit violent souls and attack the player, who fights back with a pencil and stackable buffs. The team chose to prioritise core mechanics and the map over polish, aiming to deliver a promising, properly-built prototype rather than a pretty but shallow one.",
-    slidePdf: "/slides/u15-morning.pdf",
+    slidePdf: "/slides/u15-morning/u15-morning.pdf",
     slides: "https://canva.link/znev4yx6641mevy",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u15a",
     playSlug: "u15a",
@@ -479,7 +479,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A dungeon RPG teaching Python basics and reverse engineering.",
     writeup:
       "Cyberbound turns cybersecurity into a dungeon RPG where you learn Python basics and reverse engineering by exploring areas and solving logic challenges to earn access keys. Late in development much of the code broke, so the developer simplified back to a stable core loop (move, interact, complete challenges) to ship a working prototype.",
-    slidePdf: "/slides/u15-cyberbound.pdf",
+    slidePdf: "/slides/u15-cyberbound/u15-cyberbound.pdf",
     slides: "https://canva.link/7u0cmoh0bc3ae4e",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u15b",
     playSlug: "u15b",  },
@@ -492,7 +492,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A two-player game about avoiding malware, inspired by ROUNDS.",
     writeup:
       "Inspired by ROUNDS, the team set out to teach the public to avoid malware through a two-player, last-one-standing duel with between-round power-ups. Losing a designer and manpower late forced them to make their own graphics and scope down, but they pushed the idea as far as the time allowed.",
-    slidePdf: "/slides/u17.pdf",
+    slidePdf: "/slides/u17/u17.pdf",
     slides: "https://docs.google.com/presentation/d/1mNzcUP3_2env0Blbxy3kG-tW6KZzd3XyK99WzvkcJes/edit?usp=sharing",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/playable-src/u17",
     playSlug: "u17",
@@ -506,7 +506,7 @@ const unity: DirectoryEntry[] = [
     blurb: "A 2D escape room that teaches how an attacker thinks.",
     writeup:
       "Originally a penetration-tester simulator, the solo developer pivoted to a 2D escape room that teaches how an attacker thinks: gather info about a 'box', exploit it, and repeat until you capture the machine. Fresh from Roblox and Godot, he cut features that would not fit 48 hours and focused on scalable systems he could extend later.",
-    slidePdf: "/slides/u18.pdf",
+    slidePdf: "/slides/u18/u18.pdf",
     slides: "https://1drv.ms/p/c/16AB706070C9421F/IQANp3q8YV57Srdb973w4He0AetXjDgGVYKxtTrjMTZ6AhA?e=E7gPeC",
     source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u18",
     playSlug: "u18",
