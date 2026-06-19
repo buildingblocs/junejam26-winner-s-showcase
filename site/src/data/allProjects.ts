@@ -303,7 +303,7 @@ const unity: DirectoryEntry[] = [
     writeup:
       "The team picked paper as a household object that could transform, then built a 2D Super Mario-style platformer where a paper character morphs into a ball or plane to clear levels. They handled a non-contributing teammate by re-planning around three people and smoothed out jumping bugs by reading through the code.",
     slides: "https://www.icloud.com/keynote/0115tZWaTGrmW_BQgsFH2-eLg",
-    source: "https://github.com/tunghongjiang-sys1/U1-GameJam2026-2026-06-10_10-00-36",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u1",
     playSlug: "u1",
   },
   {
@@ -341,7 +341,7 @@ const unity: DirectoryEntry[] = [
       "Asking what the opposite of a grey, repeating routine looks like, the team landed on colour: a world that lost its colour because people stopped looking closely, restored by a magic paintbrush that reveals the memories hidden inside ordinary things. They tied the message to the mechanic, since painting an object unlocks one of the player's memories, and added a countdown to give the quiet reflection real stakes.",
     slidePdf: "/slides/u6.pdf",
     slides: "https://docs.google.com/presentation/d/1a_v-ZHaeqEhLahwTRQUccM5202tEo3fzwn7bsnstfz4/edit?usp=drivesdk",
-    source: "https://drive.google.com/file/d/15hNg4ZCGsMx-MLQfz2Br8kf5dFVupUPJ/view?usp=sharing",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u6",
     playSlug: "u6",
   },
   {
@@ -355,7 +355,7 @@ const unity: DirectoryEntry[] = [
       "Exhausted and juggling exams, the team started with a casual Block Blast-style puzzle and, in a late-night spark, turned it into a roguelike RPG. A constant boss countdown makes the puzzle feel real-time: place blocks too slowly and the boss attacks, while clearing lines triggers combo counters.",
     slidePdf: "/slides/u7a.pdf",
     slides: "https://docs.google.com/presentation/d/1fZOvBt5fgupj7JSgRxNYY8sx7RktNfh_ipito94A9Bk/edit?usp=sharing",
-    source: "https://drive.google.com/drive/folders/1zU1B4Z4PcuRRdtk0ZeVc1emOH8hbWWUt?usp=sharing",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u7a",
     playSlug: "u7a",
   },
   {
@@ -369,7 +369,7 @@ const unity: DirectoryEntry[] = [
       "The team set out to question what 'everyday' even means, building a game where you control different characters, each with different circumstances, all working toward the shared goal of getting ready for the day. Facing a large original scope, they downsized, taking assets from itch.io and trimming redundant characters and level size.",
     slidePdf: "/slides/u7b.pdf",
     slides: "https://docs.google.com/presentation/d/1Zk5Jpv2ot5BhM1t5UezZ45-yBvf_WE8_AYGCoPJM_gc/edit?usp=sharing",
-    source: "https://drive.google.com/drive/u/0/folders/13yyoIY3Y8Gpatj-H-fEBljwwE8R6FGzk",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u7b",
     playSlug: "u7b",
   },
   {
@@ -410,7 +410,7 @@ const unity: DirectoryEntry[] = [
       "Dreamed up over a cup of Milo, the team built their first Unity game while all of them were still learning C#. They overcame time, skill, and experience gaps by collaborating and each contributing what they could.",
     slidePdf: "/slides/u11.pdf",
     slides: "https://docs.google.com/presentation/d/12f6U52jRNBCplCPaIN8TL_l_0ZTiZ5BwQMv2lYQFGrE/edit?usp=sharing",
-    source: "https://github.com/PohJunZheMatthew/June_Jam_Competition_U11",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u11",
     playSlug: "u11",
   },
   {
@@ -424,7 +424,7 @@ const unity: DirectoryEntry[] = [
       "A teammate's love of horror led to a game where you play a house cat in a lovely home, only to find it is not alone. New to coding for games, the team learned from any resource they could find to ship a tense experience in just over a day.",
     slidePdf: "/slides/u12.pdf",
     slides: "https://docs.google.com/presentation/d/1HHLNlj_hII-tlmtBJCKL8jYnG3aOESv3va81B9rMEgE/edit?usp=drive_link",
-    source: "https://drive.google.com/drive/folders/1LCd2v9EsipwUKg8GIW-i7bchapwgj5x0?usp=drive_link",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u12",
     playSlug: "u12",
   },
   {
@@ -437,7 +437,7 @@ const unity: DirectoryEntry[] = [
     writeup:
       "A Unity game that opens on a difficulty-select menu (Easy or Medium) fronted by a character named Jim. See the team's write-up and slides for the full concept.",
     slides: "https://canva.link/4ofb3zngx019zvy",
-    source: "https://github.com/Kaloo930/U_14",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u14",
     playSlug: "u14",
     doc: "https://docs.google.com/document/d/1Tj0bnPwu3FuUFzSTdO71OWn0ygGoCJt0lqHp3RzXjoc/edit",
   },
@@ -451,7 +451,7 @@ const unity: DirectoryEntry[] = [
     writeup:
       "Inspired by Risk of Rain, The Morning Routine is a roguelike where everyday household items inherit violent souls and attack the player, who fights back with a pencil and stackable buffs. The team chose to prioritise core mechanics and the map over polish, aiming to deliver a promising, properly-built prototype rather than a pretty but shallow one.",
     slides: "https://canva.link/znev4yx6641mevy",
-    source: "https://github.com/ritzmonke/The-Morning-Routine/tree/main",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u15a",
     playSlug: "u15a",
   },
   {
@@ -490,7 +490,7 @@ const unity: DirectoryEntry[] = [
     writeup:
       "Originally a penetration-tester simulator, the solo developer pivoted to a 2D escape room that teaches how an attacker thinks: gather info about a 'box', exploit it, and repeat until you capture the machine. Fresh from Roblox and Godot, he cut features that would not fit 48 hours and focused on scalable systems he could extend later.",
     slides: "https://1drv.ms/p/c/16AB706070C9421F/IQANp3q8YV57Srdb973w4He0AetXjDgGVYKxtTrjMTZ6AhA?e=E7gPeC",
-    source: "https://drive.google.com/file/d/1zzug99FBrEFrKe4aZKWIhFak-wCO1bIP/view?usp=sharing",
+    source: "https://github.com/buildingblocs/junejam26-showcase/tree/main/site/unity-src/u18",
     playSlug: "u18",
   },
 ];
